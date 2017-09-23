@@ -13,7 +13,13 @@ export class AppComponent {
 
   constructor(private _service: NotificationService) {}
   notify(){
-
-      this._service.notify();
+      const options =  { 
+                        title: 'hello world',
+                        body :'this is a notification body',
+                        dir: 'ltr',
+                        icon: "../assets/ng-shield.png",
+                        closeDelay:2000
+                      }
+      this._service.notify(options);
   }
 }

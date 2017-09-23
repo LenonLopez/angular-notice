@@ -4,14 +4,8 @@ import { Injectable, OnDestroy } from '@angular/core';
 export class NotificationService implements OnDestroy {
 
   private instances: Notification[] = [];
+  private _closeDelay: number;
 
-  private title: string = 'hello world';
-  private body: string = 'this is a notification body';
-  private dir: NotificationDirection = 'ltr';
-  private icon: string = "../assets/ng-shield.png";
-  private lang: string;
-  private tag: string;
-  private closeDelay: number = 2000;
 
   // private sound: string; Not currently supported by any browser -source: https://developer.mozilla.org/en-US/docs/Web/API/notification/sound
   // private renotify: boolean; Not currently supported by any browser -source: https://developer.mozilla.org/en-US/docs/Web/API/notification/renotify
@@ -35,16 +29,9 @@ export class NotificationService implements OnDestroy {
   private isPermissionGranted(permission) {
     return permission === 'granted';
   }
-  private create() {
+  private create(options) {
 
-    const options: NotificationOptions = {
-      body: this.body,
-      dir: this.dir,
-      icon: this.icon,
-      lang: this.lang,
-      tag: this.tag,
-    }
-    const notification: Notification = new Notification(this.title, options);
+    const notification: Notification = new Notification(options.title, options);
 
     this.instances.push(notification);
     // this.attachEventHandlers(notification);
@@ -53,27 +40,25 @@ export class NotificationService implements OnDestroy {
     return notification;
   }
 
-  public notify({body,dir,
-    icon,
-    lang,
-    tag,
-  }) {
+  public notify(options) {
+
     if (!this.checkCompatibility()) {
       return console.log('Notification API not available in this browser.');
     }
 
     return this.requestPermission((permission) => {
       if (this.isPermissionGranted(permission)) {
-        this.create();
+        this._closeDelay = options.closeDelay;
+        this.create(options);
       }
     });
   }
 
   private close(notification): void {
-    if (this.closeDelay) {
+    if (this._closeDelay) {
       setTimeout(() => {
         notification.close();
-      }, this.closeDelay);
+      }, this._closeDelay);
     } else {
       notification.close();
     }
@@ -83,9 +68,7 @@ export class NotificationService implements OnDestroy {
     this.instances = [];
   }
   private attachEventHandlers(notification): void {
-    // notification.onshow = () => {
-    //   this.onShow.emit({ notification });
-    // };
+
 
     // notification.onclick = (event) => {
     //   this.onClick.emit({ event, notification });
@@ -93,6 +76,15 @@ export class NotificationService implements OnDestroy {
 
     // notification.onerror = () => {
     //   this.onError.emit({ notification });
+    // };
+
+
+    // No Longer supported in current api spec. 
+    // in order to future proof this, I have disabled this event handler.
+    // -source: https://developer.mozilla.org/en-US/docs/Web/API/Notification
+    
+    // notification.onshow = () => {
+    //   this.onShow.emit({ notification });
     // };
 
     // notification.onclose = () => {
