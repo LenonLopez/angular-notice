@@ -1,10 +1,19 @@
 import { Component } from '@angular/core';
+import { NotificationService } from './notification.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'app';
+
+  title: string = 'ng2-notifications';
+  description: string = 'Angular 2 Component for Native Push Notifications';
+
+  constructor(private _service: NotificationService) {}
+  notify(){
+
+      this._service.notify();
+  }
 }
