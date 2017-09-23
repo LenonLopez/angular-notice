@@ -34,7 +34,7 @@ export class NotificationService implements OnDestroy {
     const notification: Notification = new Notification(options.title, options);
 
     this.instances.push(notification);
-    // this.attachEventHandlers(notification);
+    this.attachEventHandlers(notification);
     this.close(notification);
 
     return notification;
@@ -70,19 +70,21 @@ export class NotificationService implements OnDestroy {
   private attachEventHandlers(notification): void {
 
 
-    // notification.onclick = (event) => {
-    //   this.onClick.emit({ event, notification });
-    // };
+    notification.onclick = (event) => {
+      // this.onClick.emit({ event, notification });
+      console.log(event, notification);
+    };
 
-    // notification.onerror = () => {
-    //   this.onError.emit({ notification });
-    // };
+    notification.onerror = () => {
+      // this.onError.emit({ notification });
+      console.log(event, notification);
+    };
 
 
     // No Longer supported in current api spec. 
     // in order to future proof this, I have disabled this event handler.
     // -source: https://developer.mozilla.org/en-US/docs/Web/API/Notification
-    
+
     // notification.onshow = () => {
     //   this.onShow.emit({ notification });
     // };

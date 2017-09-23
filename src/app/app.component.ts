@@ -18,6 +18,7 @@ export class AppComponent {
                         body :'this is a notification body',
                         dir: 'ltr',
                         icon: "../assets/ng-shield.png",
+                        tag: "notice",
                         closeDelay:2000
                       }
       this._service.notify(options);
