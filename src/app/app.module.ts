@@ -1,4 +1,4 @@
-import { NotificationModule } from './notifications-module/notifications.module';
+import { NotificationsModule } from './notifications-module/notifications.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    NotificationModule
+    NotificationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

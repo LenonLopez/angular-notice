@@ -4,6 +4,8 @@
 /dist
 /tmp
 /out-tsc
+/build
+/lib
 
 # dependencies
 /node_modules
@@ -16,7 +18,7 @@
 *.launch
 .settings/
 *.sublime-workspace
-
+*.bak
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json
@@ -32,6 +34,7 @@
 npm-debug.log
 testem.log
 /typings
+/npm-build-files
 
 # e2e
 /e2e/*.js

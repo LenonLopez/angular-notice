@@ -1,27 +1,61 @@
-# AngularNotifications
+# angular-notice
+# Native Notifications
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.3.
+# 1. npm install angular-notice
 
-## Development server
+# 2. Import Module
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+ import NotificationsModule and add it to the imports array within your app's module
+    ex: 
+        import { BrowserModule } from '@angular/platform-browser';
+        import { NgModule } from '@angular/core';
+        import { AppComponent } from './app.component';
+        import { NotificationsModule } from 'angular-notice'
+        
+        @NgModule({
+        declarations: [
+            AppComponent
+        ],
+        imports: [
+            BrowserModule,
+            NotificationsModule
+        ],
+        providers: [NotificationsModule],
+        bootstrap: [AppComponent]
+        })
+        export class AppModule { }      
+# 3.  import NativeNotificationService and inject
 
-## Code scaffolding
+ import the NativeNotificationService in your app's component and inject it into your app's constructor
+   ex:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+        import { Component } from '@angular/core';
+        import { NativeNotificationService } from 'angular-notice/lib/native-notification.service';
+        
+        @Component({
+        selector: 'app-root',
+        templateUrl: './app.component.html',
+        styleUrls: ['./app.component.css']
+        })
+        
+        export class AppComponent {
+        title = 'app';
 
-## Build
+        constructor(private _service: NativeNotificationService) {}
+ 
+        }
+# 4. call notify
+    
+    call the .notify() method off of the service.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+          someMethodThatGetsCalledWithinComponent(){
+                const options =  { 
+                                    title: 'hello world',
+                                    body : 'this is a notification body',
+                                    dir: 'ltr',
+                                    icon: '../assets/ng-shield.png',
+                                    tag: 'notice',
+                                    closeDelay: 2000
+                                };
+                this._service.notify(options);
+            }

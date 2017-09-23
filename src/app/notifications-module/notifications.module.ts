@@ -8,4 +8,4 @@ import { NgModule } from '@angular/core';
     declarations: [],
     providers: [NativeNotificationService],
 })
-export class NotificationModule { }
+export class NotificationsModule { }

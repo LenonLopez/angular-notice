@@ -1,19 +1,25 @@
 {
-  "name": "angular-notifications",
+  "name": "angular-notice",
+  "author": "Lenon Lopez",
   "version": "0.0.1",
   "license": "MIT",
+  "keywords": [
+    "angular",
+    "angular 2",
+    "angular 2+",
+    "angular 4",
+    "push notifications",
+    "native"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "lint": "ng lint",
-    "ngc-build": "ngc -p ./tsconfig.lib.json"
+    "lint": "ng lint"
   },
-  "private": true,
   "dependencies": {
-    "@angular/compiler": "^4.2.4",
-    "@angular/core": "^4.2.4",
     "@angular/common": "^4.2.4",
+    "@angular/core": "^4.2.4",
     "@angular/platform-browser": "^4.2.4",
     "@angular/platform-browser-dynamic": "^4.2.4",
     "core-js": "^2.4.1",
@@ -21,10 +27,13 @@
   },
   "devDependencies": {
     "@angular/cli": "1.4.3",
+    "@angular/compiler": "^4.2.4",
     "@angular/compiler-cli": "^4.2.4",
     "@angular/language-service": "^4.2.4",
     "@types/node": "~6.0.60",
     "codelyzer": "~3.1.1",
+    "gulp": "^3.9.1",
+    "rimraf": "^2.6.2",
     "ts-node": "~3.2.0",
     "tslint": "~5.3.2",
     "typescript": "~2.3.3"
