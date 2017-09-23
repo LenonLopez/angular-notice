@@ -1,5 +1,5 @@
+import { NativeNotificationService } from './notifications-module/native-notification.service';
 import { Component } from '@angular/core';
-import { NotificationService } from './notification.service';
 
 @Component({
   selector: 'app-root',
@@ -8,19 +8,19 @@ import { NotificationService } from './notification.service';
 })
 export class AppComponent {
 
-  title: string = 'ng2-notifications';
-  description: string = 'Angular 2 Component for Native Push Notifications';
+  title: string = 'angular notifications';
+  description: string = 'angular service for Native Push Notifications';
 
-  constructor(private _service: NotificationService) {}
+  constructor(private _service: NativeNotificationService) {}
   notify(){
       const options =  { 
                         title: 'hello world',
-                        body :'this is a notification body',
+                        body : 'this is a notification body',
                         dir: 'ltr',
-                        icon: "../assets/ng-shield.png",
-                        tag: "notice",
-                        closeDelay:2000
-                      }
+                        icon: '../assets/ng-shield.png',
+                        tag: 'notice',
+                        closeDelay: 2000
+                      };
       this._service.notify(options);
   }
 }

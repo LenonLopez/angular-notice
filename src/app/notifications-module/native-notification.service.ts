@@ -1,20 +1,27 @@
 import { Injectable, OnDestroy } from '@angular/core';
 
 @Injectable()
-export class NotificationService implements OnDestroy {
+export class NativeNotificationService implements OnDestroy {
 
   private instances: Notification[] = [];
   private _closeDelay: number;
 
-
-  // private sound: string; Not currently supported by any browser -source: https://developer.mozilla.org/en-US/docs/Web/API/notification/sound
-  // private renotify: boolean; Not currently supported by any browser -source: https://developer.mozilla.org/en-US/docs/Web/API/notification/renotify
-  // private sticky: boolean; Not currently supported by any broswer - source: https://developer.mozilla.org/en-US/docs/Web/API/Notification/sticky
-  // private vibrate: Array<number>; Not currently supported by any broswer - source: https://developer.mozilla.org/en-US/docs/Web/API/Notification/vibrate
-  // private noscreen: boolean = false; Not currently supported by any broswer - source: https://developer.mozilla.org/en-US/docs/Web/API/Notification/noscreen
-  // private data: any; Only supported in webworkers -source: https://developer.mozilla.org/en-US/docs/Web/API/notification/data
-  // private silent: boolean = true; Only supported in webworkers -source: https://developer.mozilla.org/en-US/docs/Web/API/notification/silent
-
+/*
+  private sound: string; Not currently supported by any browser 
+   - source: https://developer.mozilla.org/en-US/docs/Web/API/notification/sound
+  private renotify: boolean; Not currently supported by any browser 
+   - source: https://developer.mozilla.org/en-US/docs/Web/API/notification/renotify
+  private sticky: boolean; Not currently supported by any broswer 
+   - source: https://developer.mozilla.org/en-US/docs/Web/API/Notification/sticky
+  private vibrate: Array<number>; Not currently supported by any broswer 
+   - source: https://developer.mozilla.org/en-US/docs/Web/API/Notification/vibrate
+  private noscreen: boolean = false; Not currently supported by any broswer 
+   - source: https://developer.mozilla.org/en-US/docs/Web/API/Notification/noscreen
+  private data: any; Only supported in webworkers 
+   - source: https://developer.mozilla.org/en-US/docs/Web/API/notification/data
+  private silent: boolean = true; Only supported in webworkers 
+   - source: https://developer.mozilla.org/en-US/docs/Web/API/notification/silent
+*/
   constructor() { }
 
   public ngOnDestroy(): void {
