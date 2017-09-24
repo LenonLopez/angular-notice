@@ -21,7 +21,7 @@ import NotificationsModule and add it to the imports array within your app's mod
             BrowserModule,
             NotificationsModule
         ],
-        providers: [NotificationsModule],
+        providers: [],
         bootstrap: [AppComponent]
         })
         export class AppModule { }
