@@ -1,16 +1,24 @@
 {
-  "name": "angular-notice",
-  "author": "Lenon Lopez",
-  "version": "0.0.1",
-  "license": "MIT",
-  "keywords": [
-    "angular",
-    "angular 2",
-    "angular 2+",
-    "angular 4",
-    "push notifications",
-    "native"
-  ],
+    "name": "angular-notice",
+    "author": "Lenon Lopez <LenonLopez@gmail.com> (http://www.LenonLopez.com)",
+    "version": "0.0.2",
+    "license": "MIT",
+    "keywords": [
+      "angular",
+      "angular 2",
+      "angular 2+",
+      "angular 4",
+      "push notifications",
+      "native"
+    ],
+    "repository":
+      {
+        "type": "git",
+        "url": "https://github.com/lenonlopez/angular-notice.git"
+      },
+    "bugs":{
+        "url": "https://github.com/LenonLopez/angular-notice/issues"
+    },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
