@@ -1,11 +1,13 @@
 # angular-notice
-# Native Notifications
+> Native Notifications
 
-# 1. npm install angular-notice
-
-# 2. Import Module
-import NotificationsModule and add it to the imports array within your app's module
- 
+## Setup
+1. Install angular-notice
+```bash
+	npm i angular-notice
+```
+2. Import Module
+> import NotificationsModule and add it to the imports array within your app's module
 ```typescript
  
         import { BrowserModule } from '@angular/platform-browser';
@@ -26,10 +28,8 @@ import NotificationsModule and add it to the imports array within your app's mod
         })
         export class AppModule { }
 ```      
-# 3.  import NativeNotificationService and inject
-
-import the NativeNotificationService in your app's component and inject it into your app's constructor
-
+3. Import NativeNotificationService and inject
+> import the NativeNotificationService in your app's component and inject it into your app's constructor
 ```typescript
         import { Component } from '@angular/core';
         import { NativeNotificationService } from 'angular-notice/lib/native-notification.service';
@@ -47,9 +47,8 @@ import the NativeNotificationService in your app's component and inject it into 
  
         }
 ```
-# 4. call notify
-    
-call the .notify() method off of the service.
+4. Call notify
+> call the .notify() method off of the service.
 ```typescript
           someMethodThatGetsCalledWithinComponent(){
                 const options =  { 
