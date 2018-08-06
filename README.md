@@ -62,3 +62,6 @@
                 this._service.notify(options);
             }
 ```
+
+## Notes
+Chrome requires that a domain must have an SSL certificate for the notification to display.
