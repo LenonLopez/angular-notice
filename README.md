@@ -2,8 +2,8 @@
 > Native Notifications
 
 ## Development
-Updated repo to work with angular 6
-Fixed security vulnerabilities due to gulp (I had to force update minimatch, which is one of its dependencies)
+* Updated repo to work with angular 6
+* Fixed security vulnerabilities due to gulp (I had to force update minimatch, which is one of its dependencies)
 
 ## Setup
 1. Install angular-notice
