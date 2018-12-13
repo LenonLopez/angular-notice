@@ -1,6 +1,10 @@
 # angular-notice
 > Native Notifications
 
+## Development
+* Updated repo to work with angular 7
+* Fixed security vulnerabilities
+
 ## Setup
 1. Install angular-notice
 ```bash
