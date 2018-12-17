@@ -70,4 +70,4 @@
 
 ## Notes
 Chrome requires that a domain must have an SSL certificate for the notification to display.
-Mobile version of chrome seems to ignore notications - this is an issue that i'm looking into.
+Mobile version of chrome seems to ignore notifications - this is an issue that i'm looking into.
