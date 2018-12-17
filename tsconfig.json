@@ -17,6 +17,14 @@
       "dom"
     ],
     "module": "es2015",
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "paths": {
+      "angular-notice": [
+        "dist/angular-notice"
+      ],
+      "angular-notice/*": [
+        "dist/angular-notice/*"
+      ]
+    }
   }
 }

@@ -79,6 +79,41 @@
       "root": "e2e",
       "sourceRoot": "e2e",
       "projectType": "application"
+    },
+    "angular-notice": {
+      "root": "projects/angular-notice",
+      "sourceRoot": "projects/angular-notice/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/angular-notice/tsconfig.lib.json",
+            "project": "projects/angular-notice/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular-notice/src/test.ts",
+            "tsConfig": "projects/angular-notice/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-notice/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/angular-notice/tsconfig.lib.json",
+              "projects/angular-notice/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "angular-notifications",

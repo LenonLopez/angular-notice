@@ -1,4 +1,4 @@
-import { NativeNotificationService } from './notifications-module/native-notification.service';
+import { NativeNotificationService } from './angular-notice';
 import { Component } from '@angular/core';
 
 @Component({
