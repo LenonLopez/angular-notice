@@ -19,7 +19,7 @@
         import { BrowserModule } from '@angular/platform-browser';
         import { NgModule } from '@angular/core';
         import { AppComponent } from './app.component';
-        import { NativeNoticationsService } from 'angular-notice'
+        import { NativeNotificationsService } from 'angular-notice'
         
         @NgModule({
         declarations: [
@@ -28,7 +28,7 @@
         imports: [
             BrowserModule            
         ],
-        providers: [NativeNoticationsService], // add to your module's providers array
+        providers: [NativeNotificationsService], // add to your module's providers array
         bootstrap: [AppComponent]
         })
         export class AppModule { }
